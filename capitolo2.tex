@@ -1,0 +1,140 @@
+\section{La via Lattea}
+La \emph{Via Lattea} \`e la galassia in cui noi abitiamo. Il sistema solare \`e posizionato in uno dei suoi bracci in una zona molto periferica. Classificandola in modo pi\`u tecnico, si tratta di una galassia \emph{spirale barrata}\footnote{Nome che indica come sono disposta le braccia della galassia}. Pu\`o essere suddivisa in alcuni zone principali che prendono il nome di
+\begin{center}
+\begin{tabular}{c c c c}
+	\hline
+	\hline
+	Zona & Massa & R & Geometria \\
+	\hline
+	\hline
+	Alone Stellare & $10^9M_{\odot}$ & $r\sim20kpc$ & Sferico\\
+	Disco di Gas   & $10^{10}M_{\odot}$ & $r\sim25kpc$ & Disco $h=0.15kpc$\\
+	Rigonfiamento Centrale & $10^{10}M_{\odot}$ & $(6\times2\times2)Kpc$ & Ellissoide\\
+	Disco Stellare & $10^{11}M_{\odot}$ & $r\sim15kpc$ & Disco $h=1kpc$\\
+	Alone Dark Matter & $10^{12}M_{\odot}$ & $r>60kpc?$ & Sferico\\
+	\hline
+\end{tabular}
+\end{center}
+Le stelle nella galassia sono organizzate in \emph{ammassi} che possono essere di due tipi: \emph{Ammassi Globulari} e \emph{Ammassi Aperti}. Gli ammassi globulari sono distribuiti nell'alone galattico, mentre gli ammassi aperti sono situati nel disco stellare. Le principali caratteristiche di entrambi sono riassumibili in
+\begin{center}
+\begin{tabular}{c c c c c c}
+	\hline
+	\hline
+	Ammasso & $N^o$ Stelle & Dimensioni & Gas & Neb. Planetarie & $N^o$ Conosciuti \\
+	\hline
+	\hline
+	Aperto & $10^3$ - $10^4$ & $10pc$ & S\`i & No & $10^3$\\
+	Globulare & $10^4$ - $10^6$ & $(20$ - $100)pc$ & No & S\`i & 160\\
+	\hline
+\end{tabular}
+\end{center}
+\subsection{Dinamica degli Ammassi}
+Gli ammassi globulari, essendo sistemi composti da molte stelle, viene spontaneo tentare di applicare i metodi della termodinamica per studiarne la dinamica. Non \`e possibile per\`o trattare l'ammasso globulare come un gas perfetto. La teoria di gas perfetto \`e una teoria non-interagente, mentre in questo caso si hanno interazioni stella-stella ed \`e di tipo a \emph{lungo-range}. Questo complica lo studio delle traiettorie delle singole particelle. Si adotta un approccio di tipo campo medio usando il \emph{teorema del viriale} che in questo caso si pu\`o applicare in quanto si ha a che
+\begin{itemize}
+	\item Particelle che si muovono in uno spazio limitato $V$.
+	\item $G=\sum_{i=1}^Nr_ip_i$\`e una quantit\`a finita. 
+	\item $G\to cost$.
+\end{itemize}
+
+Per la limitatezza di $G$ si ha che 
+\newl{\abs{G} = \abs{\sum_{i=1}^N r_i p_i} \leq \left. \sum_{i=1}^N\abs{r_i} \cdot \abs{p_i} \right|_{V} \leq NR_vP}
+dove $R_v$ \`e stato ipotizzato limitato, quindi $G$ \`e limitata. Pi\`u o meno nello stesso modo \`e possibile mostrare il comportamento di $G$ per $t\to+\infty$
+\newl{
+	\abs{\left\langle\frac{d}{dt}G \right\rangle} = \abs{\lim_{\tau\to+\infty}\frac{1}{\tau}\int_{0}^{\tau}\frac{d}{dt}G\, dt } = \abs{\lim_{\tau\to\infty}\frac{G(\tau)-G(0)}{\tau}} \leq \abs{\lim_{\tau\to+\infty} \frac{2NR_vP}{\tau} } = 0
+}
+quindi per $t\to+\infty$, $G$ tende ad una costante. A questo punto \`e possibile enunciare che \emph{Il viriale, dopo un certo tempo di rilassamento, \`e costante}. Partendo dall'enunciato si dedurranno tutte le propriet\`a principali del viriale.
+
+\newtheorem*{mydef}{Enunciato del Viriale}
+\begin{mydef}
+	\newl{ \left\langle k_t \right\rangle = -\frac{1}{2}\left\langle \sum_{i=1}^N r_i\cdot F_i \right\rangle_t \text{ Dove } k_t = \sum_i^N k_i \text{ energia cinetica totale} \label{enun:vir}}
+\end{mydef}
+
+\begin{proof}[Dimostrazione]
+Partendo dal risultato ottenuto precedentemente sulla derivata di $\left\langle G' \right\rangle=0$ \`e possibile scrivere
+\newl{\left\langle \frac{d}{dt} \sum_{i=1}^Nr_i \cdot p_i \right\rangle = 0 }
+facendo le derivate
+\newl{\left\langle 2\sum_{i=1}^Nk_i + \sum_{i=1}^Nr_i\cdot F_i \right\rangle = 0 \nonumber\\
+	\left\langle k_t \right\rangle = -\frac{1}{2}\left\langle \sum_{i=1}^N r_i\cdot F_i \right\rangle }
+\end{proof}
+Questo per un caso generale. Considerando il caso specifico di forze centrali si il \emph{Teorema del Viriale per Forze Centrali}.
+\newtheorem*{mydef2}{Viriale per forze centrali}
+\begin{mydef2}
+Il teorema del viriale per un campo di forze centrali del tipo 
+\newl{U(r)\sim \frac{1}{r^{\alpha}},}
+si scrive nella forma
+\newl{ \left\langle K \right\rangle = -\frac{\alpha}{2}\left\langle U \right\rangle_t .}
+Nel caso specifico della forza di attrazione gravitazionala si ha che $\alpha=1$.
+\end{mydef2}
+\begin{proof}
+Per dimostrarlo si parte dall'enunciato del viriale dato precedentemente in cui si sostituisce la forza di interazione gravitazione tra $N$ particelle. Sapendo quindi che
+\newl{F_{i,j} = k \frac{r_i - r_j}{\abs{r_i-r_j} ^3 } , }
+in particolar modo, la forza su una singola particella \`e pari a
+\newl{F_i = \sum_{j=1,j\neq i}^N F_{i,j} = k \sum_{j=1,j\neq i} \frac{r_i - r_j}{\abs{r_i-r_j} ^3 } }
+e sostituendo in Eq.~\ref{enun:vir} si ottiene
+\newl{-\frac{1}{2} k \left\langle \sum_{i=1}^N\left( r_i  \sum_{j=1,j\neq i} \frac{r_i - r_j}{\abs{r_i-r_j} ^3 }\right)   \right\rangle = -\frac{1}{2} k \left\langle \sum_{i=1}^N \sum_{j=1,j\neq i} \frac{r_i\left(r_i - r_j\right)}{\abs{r_i-r_j} ^3 }   \right\rangle = \nonumber \\
+	= -\frac{k}{2}\sum_{i=1}^N \sum_{j\neq i}^N \left( \frac{(r_i-r_j)^2}{\abs{r_i-r_j} ^3} +\cancel{ \frac{(r_i-r_j)(r_i+r_j)}{\abs{r_i-r_j} ^3}} \right)= -\frac{1}{2}\sum_{i=1}^N \sum_{j\neq i}^N \frac{k}{\abs{r_i-r_j} } = \nonumber\\ 
+	= -\frac{1}{2} 2U = -\frac{1}{2}U.
+}
+\end{proof}
+Usando il teorema del viriale con gli ammassi globulari \`e possibile fare stimare molte grandezze fisiche. Per avere degli ordini di grandezze che siano un minimo attendibili si consideri un ammasso globulare standard composto da $10^6$ stelle e di raggio $R=5pc$. Con questi valori \`e possibile calcolare
+\begin{itemize}
+	\item Energia potenziale dell'ammasso $U$;
+	\item Componente media cinetica $K$;
+	\item Velocita` quadratica media $\left\langle v^2 \right\rangle$;
+	\item velocit\`a di fuga $v_{fuga}$;
+	\item Tempo di rilassamento $T_rel$;
+	\item Massa totale dell'ammasso $M$;
+\end{itemize}
+\newtheorem*{mydef3}{Calcolo energia potenziale}
+\begin{mydef3}
+\newl{U = -\frac{3}{5} \frac{GM^2}{R} = -2.5\cdot 10^{51} erg  }
+\end{mydef3}
+
+\newtheorem*{mydef4}{Calcolo componente cinetica media}
+\begin{mydef4}
+Sapendo $U$ posso calcolare la componente cinetica media usando il teorema del viriale
+\newl{\left\langle K \right\rangle_t = -\frac{1}{2} \left\langle U \right\rangle = - 1.2\cdot 10^{51} erg}
+\end{mydef4}
+Da notare che l'energia totale del sistema \`e minore di zero, questo implica che il sistema \`e legato e stabile, quindi \`e ormai termalizzato.
+
+\newtheorem*{mydef5}{Velocit\`a quadratica media}
+\begin{mydef5}
+	\newl{\frac{1}{2} M_{*} \cdot N \cdot \frac{1}{N}\sum_{i=1}^N v_i^2 = \frac{1}{2}M_{tot}v_{m}^2\nonumber \\
+	v_m = \sqrt{\frac{3GM_{tot}}{5R}} = 16 km/s   }
+\end{mydef5}
+
+\newtheorem*{mydef6}{Velocit\`a di fuga}
+\begin{mydef6}
+	\newl{\frac{1}{2}M_{*} v_f^2 - G\frac{M_{*} M_{tot}}{R} = 0 \nonumber\\
+		v_f=\sqrt{\frac{2GM_{tot}}{R}} = 29 km/s
+	}
+\end{mydef6}
+Il fatto che $v_m < v_f$ \`e a riprova di quello ricavato nel calcolo dell'energia totale dell'ammasso, cio\`e che \`e un sistema legato e stabile. Sia il calcolo totale dell'energia del sistema che il calcolo della velocit\`a media a confronto con quella di fuga, suggeriscono che gli ammassi globulari siano sistemi di stelle stabili, legati e quindi, usando un termine termodinamico", termalizzati. \`E quindi interessante scoprire il tempo che un ammasso globulare impega per termalizzare. A questo scopo i prossimi calcoli saranno concentrati sul trovare un modello esaustivo di interazioni che spieghi il modo in cui questi ammassi stellari termalizzano. Il tempo che un ammasso stellare impiega per entrare in una condizione di stabilit\`a viene definito \emph{Tempo di Rilassamento}.
+
+\newtheorem*{mydef7}{Determinazione del Tempo di Rilassamento}
+\begin{mydef7}
+	Dato che gli ammassi globulari sono realt\`a stabili, il tempo di rilassamento deve essere almeno inferiore all'et\`a dell'universo.
+\end{mydef7}
+Per determinare il tempo di rilassamento dell'ammasso \`e necessario dare una definizione appropriata di \emph{ammasso rilassato}. Una prima definizione che \`e possibile dare consiste nel dire che l'ammasso, formato da $N$ stelle, \`e rilassato dopo che ogni stella che lo costituisce ha fatto $N$ interazioni con le altre.
+
+Da questa definizione segue la necessit\`a di definire quando c'\`e interazione tra due stelle. 
+Il primo tentativo di descrivere l'interazione \`e attraverso un raggio di cut-off che chiameremo \emph{Raggio di Collisione}, cio\`e la distanza massima per far si che due stelle formino uno stato legato. In questo modo la definizione di raggio di collisione viene spontanea
+\newl{\frac{1}{2}M_{*}v^2 = G\frac{M_{*}}{r_c}, \nonumber\\
+	r_c = 2 \frac{GM_{*}}{v^2}.
+}
+Ora \`e necessario definire una probabilit\`a di interazione tra le stelle. Questa dipender\`a dalla velocit\`a della stella e dalla densit\`a dell'ammasso. Sia $n$ la densit\`a stellare dell'ammasso, questo vuol dire che in un volume finito di dimensione $V=\pi r^2 \Delta x$ ci sono $N_{*}=n(\pi r^2 \Delta x)$ stelle, quindi una stella che attraversa questo volume dell'ammasso globulare compie al pi\`u un numero di interazioni pari a $N_{int} = N_{*}$. Riscrivendo meglio il volume in funzione anche della velocit\`a si ottiene che
+\newl{(\pi r^2 v \Delta t)n = N_{int} \implicaa \Delta t = \frac{N_{int}}{n \pi r^2 v}.}
+Riscrivendo meglio alcune grandezze come la densit\`a  e la costante di gravit\`a universale
+\newl{n=\frac{N}{\frac{4}{3}\pi R^3}\,\,\,\,\,\,\, G = \frac{R v^2}{M_{*}N}}
+
+
+
+
+
+
+
+
+
+
+
+
