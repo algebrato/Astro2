@@ -1,4 +1,4 @@
-\section{La via Lattea}
+\chapter{La via Lattea}
 La \emph{Via Lattea} \`e la galassia in cui noi abitiamo. Il sistema solare \`e posizionato in uno dei suoi bracci in una zona molto periferica. Classificandola in modo pi\`u tecnico, si tratta di una galassia \emph{spirale barrata}\footnote{Nome che indica come sono disposta le braccia della galassia}. Pu\`o essere suddivisa in alcuni zone principali che prendono il nome di
 \begin{center}
 \begin{tabular}{c c c c}
@@ -28,7 +28,7 @@ Le stelle nella galassia sono organizzate in \emph{ammassi} che possono essere d
 	\hline
 \end{tabular}
 \end{center}
-\subsection{Dinamica degli Ammassi}
+\section{Dinamica degli Ammassi Globulari}
 Gli ammassi globulari, essendo sistemi composti da molte stelle, viene spontaneo tentare di applicare i metodi della termodinamica per studiarne la dinamica. Non \`e possibile per\`o trattare l'ammasso globulare come un gas perfetto. La teoria di gas perfetto \`e una teoria non-interagente, mentre in questo caso si hanno interazioni stella-stella ed \`e di tipo a \emph{lungo-range}. Questo complica lo studio delle traiettorie delle singole particelle. Si adotta un approccio di tipo campo medio usando il \emph{teorema del viriale} che in questo caso si pu\`o applicare in quanto si ha a che
 \begin{itemize}
 	\item Particelle che si muovono in uno spazio limitato $V$.
@@ -124,8 +124,117 @@ Il primo tentativo di descrivere l'interazione \`e attraverso un raggio di cut-o
 }
 Ora \`e necessario definire una probabilit\`a di interazione tra le stelle. Questa dipender\`a dalla velocit\`a della stella e dalla densit\`a dell'ammasso. Sia $n$ la densit\`a stellare dell'ammasso, questo vuol dire che in un volume finito di dimensione $V=\pi r^2 \Delta x$ ci sono $N_{*}=n(\pi r^2 \Delta x)$ stelle, quindi una stella che attraversa questo volume dell'ammasso globulare compie al pi\`u un numero di interazioni pari a $N_{int} = N_{*}$. Riscrivendo meglio il volume in funzione anche della velocit\`a si ottiene che
 \newl{(\pi r^2 v \Delta t)n = N_{int} \implicaa \Delta t = \frac{N_{int}}{n \pi r^2 v}.}
-Riscrivendo meglio alcune grandezze come la densit\`a  e la costante di gravit\`a universale
+Usando subito la definizione di raggio di collisione si ottiene
+\newl{\Delta t = \frac{N_{int} v^3 }{4\pi G^2 M_{*}^2  n}, }
+ma $N_{int} \sim 1$ iunterazione ad una stella. Usando la definizione della densit\`a stellare e la definizione di $G$ uscente dal viriale
 \newl{n=\frac{N}{\frac{4}{3}\pi R^3}\,\,\,\,\,\,\, G = \frac{R v^2}{M_{*}N}}
+e supponendo che $3/5 \sim 1/2$ si ottiene la scrittura finale per $\Delta t$
+\newl{\Delta t \sim \frac{NR}{3v}.}
+Inserendo i valori tipici di un ammasso globulare si ottiene un tempo rilassamento medio di
+\newl{\Delta t \sim \frac{1}{3} \frac{10^6 \times 5pc}{16 km / s} \sim 100 Gyrs }
+che \`e un risultato fisicamente sbagliato. Come osservato precedentemente, gli ammassi globulari sono sistemi legati, quindi termalizzati. Questo suggerisce che nella stima di $\Delta t$ sono state fatte approssimazioni troppo forti che hanno reso il modello inattendibile. L'approssimazione pi\`u forte che \`e stata fatta riguarda la definizione di \emph{interaione tra le stelle}. \`E stato considerato che una stella interagisce con un'altra stella solo al di sotto del suo \emph{raggio di collisione}. In questo modo \`e stato messo un cut-off all'interazione facendola diventare a corto range. Naturalmente l'interazione gravitazionale \`e tipo \emph{a lungo range} quindi il passo successivo \`e quello di estendere l'interazione considerandola a lungo range e ricalcolare il tempo di rilassamento.
+\begin{figure}
+		\centering
+		\fbox{
+		\begin{tikzpicture}[scale=2,auto=center]
+				\draw [->] (0,0) -- (4,0);
+				\node[] at (0.3,0.6) {$*$};
+				\node[] at (1,1) {$*$};
+				\node[] at (1.3,0.2) {$*$};
+				\node[] at (1.6,-0.7) {$*$};
+				\node[] at (1.9,-0.3) {$*$};
+				\node[] at (2.2,0.5) {$*$};
+				\node[] at (2.5,0.9) {$*$};
+				\node[] at (2.9,0.3) {$*$};
+				\node[] at (3.3,-0.3) {$*$};
+				\node[] at (3.6,-0.5) {$*$};
+				\node[] at (3.9,-1) {$*$};
+				
+				\node[] at (0.3,-0.6) {$*$};
+				\node[] at (1,-1) {$*$};
+				\node[] at (1.3,-0.2) {$*$};
+				\node[] at (1.6,0.7) {$*$};
+				\node[] at (1.9,0.3) {$*$};
+				\node[] at (2.2,-0.5) {$*$};
+				\node[] at (2.5,-0.9) {$*$};
+				\node[] at (2.9,-0.3) {$*$};
+				\node[] at (3.3,0.3) {$*$};
+				\node[] at (3.6,0.5) {$*$};
+				\node[] at (3.9,1) {$*$};
+
+				\node[] at (5,0.1) {$v$ corto-range};
+
+				\draw[color=red,->] plot [smooth] coordinates {(0,0) (1,0.3) (2,-0.4) (3,0.5) (4,0.3) };
+
+				\node[color=red] at (5,0.5) {$v$ long-range};
+
+				\draw[->] (1,0.3) -- (1,0);
+				\draw[->] (2,-0.4) -- (2,0);
+				\draw[->] (3,0.5) -- (3,0);
+				\draw[->] (4,0.3) -- (4,0);
+
+				\node[] at (3.25,0.2) {$\Delta v_{\perp}$};
+	
+		\end{tikzpicture}
+		}
+		\caption{Andamento della velocit\`a della stella di riferimento nell'ammasso globulare nei due diversi modelli: interazione a corto-range ed interazione a lungo-range}
+\end{figure}
+
+Il punto di questo approccio consiste nel valutare i vari $\Delta v_{\perp}$ dalla direzione iniziale considerando l'interazione a corto range. La distribuzione delle stelle \`e possibile considerarla random quindi $\left\langle\Delta v_{\perp}\right\rangle=0$, la grandezza che pu\`o dare informazioni interessanti \`e $\left\langle\Delta v_{\perp}^2\right\rangle$, perch\`e \`e legato all'energia che la stella acquista, aumenta nel tempo e diventa significativamente importante per $\left\langle\Delta v_{\perp}^2\right\rangle \sim v^2$. 
+\begin{figure}
+		\centering
+		\fbox{
+		\begin{tikzpicture}[scale=1.3,auto=center]
+				\draw[->] (-0.6,0) -- (0.4,0); 
+				\draw[dashed,->] (2,0) arc (270:360:2);
+				\draw[->] (4,3) -- (4,4);
+				\node[] at (-1.1,0) {MRU};
+				\node[] at (4.7,3.8) {MRU};
+				\node[] at (4.1,0.6) {MCU};
+				\node[] at (0.5,0) {$*$};
+				\node[] at (2,2) {$*$};
+				\node[] at (4,4.1) {$*$};
+
+		\end{tikzpicture}
+		}
+		\caption{Tipo di interazione per $r>r_c$}
+\end{figure}
+
+Caratterizzata l'interazione per $r>r_c$ come
+\newl{
+		M_{*} \frac{\Delta v_{\perp}}{\Delta t} = G\frac{M_{*}^2}{r^2}\nonumber \\
+		\Delta v_{\perp} = G\frac{M_{*}}{rv}
+}
+da cui \`e possibile valutare $\left\langle\Delta v_{\perp}^2\right\rangle$ facendo una media pesata sui
+\newl{
+		\left\langle\Delta v_{\perp}^2\right\rangle = \int_{r_c}^R \left(2\pi r dr\right)\left(v\Delta t \right)n\left(\frac{GM_{*}}{rv}\right)^2 =  \frac{2\pi n G^2 M_{*}}{v} \Delta t \log\left(\frac{R}{r_c}\right) = \nonumber \\
+		= \frac{2\pi n G^2 M_{*}}{v} \Delta t \log\left(\frac{R v^2}{G M_{*}}\right) \sim \frac{2\pi n G^2 M_{*}}{v} \Delta t \log\left(N\right) 
+}
+valuto ora il $\Delta t$ tale che il contributo di $\left\langle\Delta v_{\perp}^2\right\rangle\sim v^2$ quindi
+\newl{
+		\Delta t = \frac{v^3}{2\pi n G^2 M_{*}^2 \log(N)} \sim \frac{1}{12 \ln(N/2)} \frac{N R}{v} \sim 2 Gyrs < ETA_{universo}
+}
+quindi per un ammasso globulare tipico si ha un tempo tipico di rilassamento di circa $2Gyr$, risultato compatibile con le osservazioni precedenti. Per stimare l'et\`a di un ammasso globulare ci sono altri metodi quali turn-off point e attraverso la stima della \emph{Luminosity Function}.
+\section{Ammassi Aperti}
+Una seconda classe di ammassi presenti nella Via Lattea sono gli \emph{Ammassi Aperti}. Sono situati sul disco galattico e sono formati da stelle e solitamente anche da gas e polveri.
+
+La popolazione stellare degli ammassi aperti arriva da statistiche fatta su circa $1000$ ammassi aperti censiti entro i $2kpc$ dalla terra. \`E difficile osservare ammassi aperti pi\`u distanti a causa delle polveri del disco galattico. Questo implica il fatto che il numero di ammassi aperti galattici che conosciamo oggi sono una forte sottostima, ma comunque permette di concludere ugualmente che la popolazione degli AA \`e molto pi\`u numeorsa di quella degli AG.
+\begin{figure}
+		\centering
+		\includegraphics[scale=0.4]{turnM67.png}
+		\caption{Diagramma HR di M67 e NGC188 messi a confronto. Il diverso punto in cui avviene il Turn-off indica l'et\`a diversa dell'ammasso}
+		\label{ETA:AA}
+\end{figure}
+
+In Fig.~\ref{ETA:AA} \`e presentato il diagramma HR della popolazione di stelle di due diversi ammassi aperti. Valutando la posizione del \emph{turn-off} point \`e possibile stimare l'et\`a dell'ammasso. Con lo stesso ragionamento utilizzato in precedenza per gli ammassi globulari possiamo stimare il tempo di rilassamento anche degli ammassi aperti come
+\newl{\Delta t_r \sim \frac{\sqrt{NR^3}}{12\log(N/2)\sqrt{GM_{*}}} \sim 10^9Gyr}
+che indica in modo evidente che la gran parte degli ammassi aperti che si conoscono non \`e rilassata.
+Gli ammassi aperti hanno et\`a molto giovane perch\`e essendo situati all'interno del disco stellare hanno una probabilit\`a abbastanza alta di interagire con oggetti particolarmente massivi che possono letteralmente distruggere l'ammasso e in generale non hanno massa sufficiente per evitare l'evaporazione. Grazie alla rotazione differenziale del piano galattico l'ammasso aperto pu\`o entrare in stretta interazione con oggetti particolarmente massivi e quindi venir distrutti dalle varie \emph{forze mareali} a cui sono sottoposti.
+\section{Il Mezzo Interstellare}
+
+
+
+
 
 
 
