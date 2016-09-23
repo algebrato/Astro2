@@ -264,7 +264,7 @@ Questo implica il fatto che la Via Lattea \`e un'attiva Fucina di nuove stelle. 
 				\subitem $\sim 0.2 M_{\odot}/yr$ di stelle vengono trasformate in nane bianche / stelle di neutroni o buchi neri.
 \end{itemize}
 Si deduce che l'ISM \`e quasi in bilancio. Ha un guadagno di massa di circa $1.0 M_{\odot}/yr$ e una perdita di circa $1.3 M_{\odot}/yr$. C'\`e comunque una certa perdita che suggerisce che il mezzo interstellare, con l'andare del tempo, va a diminuire trasformandosi in stelle.
-\subsection{Polveri Interstellari}
+\section{Polveri Interstellari}
 Il mezzo interstellare \`e caratterizzato da \emph{Gas}, \emph{Polveri}, \emph{Raggi Cosmici} e \emph{Radiazione ELM}. In queste note ci si occuper\`a soltanto dei primi due tipo di costituenti dell'ISM. Le polveri dell'ISM sono quelle che causano l'oscuramento di zone sul piano galattico (in banda V, nota come \emph{Estinzione}). Le polveri emettono principalmente nella zoma dell'IR. L'estinzione della radiazione elettromagnetica dipende principalmente dalle Polveri. Con il termine estinzione si intende
 \begin{itemize}
 		\item Diffusione: il granello di polvere, dalla forma irregolare, riflette i raggi in direzioni random ottenendo un effetto di diffusione;
@@ -373,15 +373,107 @@ si consideri $N_1$ il campione di stelle nella foto senza estinzione, $N_2$ il c
 }
 Dato che \`e stata inquadrata la stessa porzione di cielo si ha quindi che $N_1 = N_2$. Se si riesce a valutare la funzione di liminosit\`a $N'(m)$ si ha direttamente una stima di $A$ come $N_2 - N_1 \sim A$.
 Se $A > 6$ l'oscuramento delle stelle \`e troppo grande da non aver possibilit\`a di determinare la funzione di luminosit\`a. Se $A<1$ allora l'effetto di oscuramento \`e troppo piccolo per poter essere misurato.
+\subsection{Estinzione in funzione di $\lambda$}
+Come \`e possibile vedere in Fig.~\ref{PHOT:EXTIN} il fenomeno dell'estinzione \`e strettamente correlato alla lunghezza d'onda in cui lo si osserva. Per $\lambda$ piccole il fenomeno \`e molto accentuato, mentre nell'IR e nel lontano IR il fenomeno diventa molto meno intenso.
+
+Per effetto dell'estinzione le stelle appaiono leggermente pi\`u rosse, fenomeno conosciuto come \textbf{\emph{Stellar Redding}} perch\`e passano pi\`u facilmente le $\lambda$ pi\`u lunghe. Questo porta un errore sistematico nella determinazione dell'indice di arrossamento della stella. La classe spettrale invece non subisce alterazioni in quato le righe di assorbimento non subiscono alcun tipo di alterazione. Supponendo di avere due osservazioni, la prima in banda V e la seconda in banda B \`e possibile scrivere
+\newl{
+		m_V=M_V + 5 \log\frac{d}{10pc} + A_V\nonumber\\
+		m_B=M_B + 5 \log\frac{d}{10pc} + A_B,
+}
+il modulo di distanza dipende da
+\newl{
+		m_V-m_B = (M_V - M_B) + (A_V - A_B)
+}
+in cui $m_V-m_B$ \`e la quantit\`a che si misura direttamente, $M_V - M_B$ \`e possibile stimarla dalle righe spettrali (che non subiscono alterazioni a causa della polvere), sapendo le due quantit\`a appena descritte, \`e possibile facilmente ricavare la differenza dei coefficienti di estinzione $A_V-A_B$. Per ricavarne uno solo \`e necessario passare dalla valutazione della densit\`a stellare. In generale vale la regola
+\newl{R_v \equiv \frac{A_V}{A_B-A_V}\sim3.1}
+quindi
+\newl{A_v \sim 3.1(A_B-A_V)}
+\subsection{Caratteristiche misurate e misurabili di $A$}
+Una volta determinato il coefficiente di estinzione $A$, \`e possibile dedurre propriet\`a \textbf{chimiche} e \textbf{geometriche} della nube. Riprendendo la definizione del coefficiente di estinzione
+\newl{
+		A=-2.5\log e^{\tau} \sim \tau = \sigma n L
+}
+\`e possibile capire quali siano le grandezze macroscopiche e microscopiche della polvere da cui dipende:
+\begin{itemize}
+		\item L = spessore della nube (grandezza macroscopica);
+		\item n = densit\`a della nube (grandezza macroscopica);
+		\item $\sigma$ = sezione d'urto totale, assorbimento + diffusione (grandezze microscopica).
+\end{itemize}
+Valutando direttamente $A$, se $\sigma$ \`e piccola si ha che $A \propto n L = N_{col}$ dove $N_{col}$ \`e la densit\`a colonnare, cio\`e il numero di particelle presenti in una colonna unitaria di lunghezza $L$. Da questo si deduce la densit\`a della nube ma non restituisce nessun tipo di informazione chimica/geometrica sui grani di polveri che la costutuiscono. Per avere delle informazioni sulla natura microscopica dei grani lo si pu\`o fare sfruttando il forte legame dell'estinzione alla lunghezza d'onda. \`E possibile definire una funzione $f(\lambda)$ che dipenda solo dalle quantit\`a legate alle propriet\`a microscopiche della nube
+\newl{
+		f(\lambda) = \frac{A(\lambda)}{A_v} = \frac{\cancel{nL}\sigma_{\lambda}}{\cancel{nL}\sigma_v}= \frac{\sigma(\lambda)}{\sigma_v.}
+}
+
+La $f(\lambda)$ ha delle particolari caratteristiche quali:
+\begin{itemize}
+		\item[i.]   Nel visibile e nell'IR si ha un comportamento $f(\lambda) \sim \frac{1}{\lambda}$
+		\item[ii.]  La $f(\lambda)$ ha un picco nell'UV, compatibile con le osservazioni in cui si ha il massimo dell'estinzione.
+		\item[iii.] Si vedono strutture nello spettro IR che corrispondono a picchi di $A$ relativi a righe di assorbimento negli spettri
+\end{itemize}
+Il tutto per\`o non trascurando il fatto che $f(\lambda)$ non caratterizza in modo preciso e univoco una nube, ma \`e fortemente legata alla \emph{direzione di osservazione}.
+\begin{figure}
+		\centering
+		\fbox{
+		\begin{tikzpicture}
+
+				\draw[->] (0,0) -- (10,0);
+				\draw[->] (0,0) -- (0,5);
+
+				\draw[color=red] (9,4.5) -- (9.5,4.5);
+				\node[] at (10.3,4.5) {Nube1};
+
+				\draw[color=blue] (9,4) -- (9.5,4);
+				\node[] at (10.3,4) {Nube2};
+
+				\draw[color=green] (9,3.5) -- (9.5,3.5);
+				\node[] at (10.3,3.5) {Nube3};
 
 
+				\node[] at (10,-0.3) {$1/\lambda [\mu m ^{-1}]$};
+				\node[rotate=90] at (-0.3,4) {$f(\lambda)=A(\lambda)/A_v$};
 
+				\draw[color=blue] plot [smooth] coordinates {(0,0) (1,0.5) (2,0.9) (3,1.4) (6,2.7) (9,5) };
+				\draw[color=red] plot [smooth] coordinates {(0,0) (1,0.5) (2,0.9) (3,1.4) (6,2.7) (9,4) };	
+				\draw[color=green] plot [smooth] coordinates {(0,0) (1,0.5) (2,0.9) (3,1.4) (6,2.7) (9,3) };
+				\draw[dashed] (3,-0.5) -- (3,5.5);
+				\node[] at (1.5,4) {Visibile};
+				\node[] at (4.5,4) {UV};
 
+				\foreach \x in {0,1,2,3,4,5,6,7,8}{
+					\node[] at (\x,-0.3) {$\x$};
+				}
+		\end{tikzpicture}
+		}
+		\caption{Comportamento della $f(\lambda)$ in funzione di $1/\lambda$. Per lunghezze d'onda piccole l'effetto dell'estinzione diventa importante permettendo di mettere in luce anche le differenze microscopiche delle varie nubi.}
+\end{figure}
 
+\subsection{Assorbimento e Diffusione}
+L'albedo \`e quella parte dell'estinzione causata dalla diffusione. Considerando che l'estinzione \`e causata dai fenomeni dell'assorbimento e della diffusione \`e possibile scrivere
+\newl{
+		I(L) = I_{0} e^{-\tau}=I_{0} e^{-\tau\left(a_{\lambda diff} + a_{\lambda ass}\right)}
+}
+dove
+\newl{
+		a_{\lambda diff} + a_{\lambda ass} = 1.
+}
+Le \emph{Nebulose a Riflessione} sono tipici oggetti con $a_{\lambda diff}=0.6$ perch\`e sono caratterizzate da una nube di gas con nelle vicinanze una o pi\`u stelle molto luminose. La distanza delle stelle che la illuminano per\`o non \`e sufficiente ad ionizzare il gas, quindi si ha solo diffusione.\subsection{Dimensioni dei Grani dell'ISM}
+Un ulteriore caratteristica fisica del mezzo interstellare che \`e possibile determinare \`e la dimensione media dei grani, $r_g$, di polvere che lo costituiscono. Per vari size dei grani si hanno differenti effetti, per esempio:
+\begin{itemize}
+		\item Se $r_g \gg \lambda$ allora si hanno gli effetti tipici dati dall'ottica geometrica. $A(\lambda) = cost.$ e quindi non si ha nessun tipo di fenomeno di diffusione.
+		\item Se $r_g \ll \lambda$ allora la sezione d'urto tende a zero $\sigma \to 0$. $A(\lambda)$\`e piccolo e costante, non si ha interazione tra la radiazione e i grani.
+		\item Se $r_g \sim \lambda$ allora il fenomeno della diffusione \`e importante e si ha una forte correlazione tra $A$ e $\lambda$.
+\end{itemize}
 
+Nella categoria dei \textbf{\emph{grani grossi}} rientrano tutti i grani con sezione del $\mu m - mm$. Questi generano uno spettro nell'IR e solitamente sono molecole di $SiO$, $SiO_2$ e ghiaccio.
 
+Nella categoria dei \textbf{\emph{grani piccoli}} rientrano le polveri di sezione $1nm-10nm$. Sono caratterizzati da generare forte estinzione nell'UV e sono principalmente idrocarburi, carbonio elementare e carbonio sotto forma di grafite.
+\subsection{Forma dei Grani dell'ISM}
+La luce delle stelle non \`e polarizzata per\`o da terra si rileva che una buona percentuale di luce che arriva dalle stelle \`e polarizzata. Tanto pi\`u polarizzata quanto pi\`u la stella \`e lontana e tanto pi\`u ISM deve attraversare. Quindi misurare e caratterizzare la polarizzazione della luce delle stelle \`e un modo per caratterizzare il mezzo interstellare.
 
+Si osserva in particolare che la luce proveniente dalle stelle ha polarizzazione caratterizzata dal piano $E$ parallelo al piano galattico. Questo implica che i grani assorbono principalmente la componente perpendicolare della polarizzazione. Questo fenomeno suggerisce una forma dei grani di tipo ellissoidale in cui si hanno elettroni liberi pi\`u in una direzione che in un'altra.
 
+Si osserva anche il contributo delle polveri alla polarizzazione della luce delle stelle, \`e necessario ma non sufficente, infatti si ha che se $A_v$ \`e piccolo allora non si ha quasi polarizzazione, se $A_v$ \`e grande allora la polarizzazione delle stelle pu\`o essere sia molto bassa che molto grande.
 
 
 
