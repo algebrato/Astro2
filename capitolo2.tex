@@ -582,11 +582,61 @@ La temperatura associata a questa energia \`e nell'ordine dei $0.07K$, quindi la
 La riga a $21cm$ \`e sufficientemente lunga da attraversare le polveri e raggiungere la terra dove \`e possibile rilevarla. Essendo cos\`i insensibile alle polveri permette di studiare la struttura e la rotazione deilla galassia. Andando a osservare lo split Zeeman sulla riga a $21cm$ \`e possibile anche avere informazioni sul campo magnetico galattico.
 
 \subsection{Emissione di Idrogeno}
+Le caratteristiche principali del gas interstellare sono riassumibili in
+\begin{itemize}
+		\item Temperatura: $T\sim 100K$;
+		\item Dimensione nubi: $d\sim 10/60 pc$;
+		\item Densit\`a HI: $n_{HI}\sim 1/10 cm^{-3}$ in nube;
+				\subitem $n_{HI}\sim 0.1 cm^{-3}$ in galassie;
+		\item Densit\`a colonnare: $\sigma_{HI} \sim 10^{21} cm^{-2}$
+		\item Velocit\`a: $V_{rms}\sim \sqrt{k_B T/ m_p} = 10^5 cm/s$
+\end{itemize}
+il profilo di riga mostra \emph{ali molto allargate} ad indice di piccole zone di gas molto caldo e rarefatto che, come si vedr\`a in seguito, si insinuano tra le regioni $HI$ del mezzo interstellare.
 
+Considerando la correlazione tra densit\`a colonnare di HI (riga a $21cm$) e di polvere (misure di estinzione) si nota che che alla fine i due mezzi sono mescolati all'interno del mezzo interstellare.
+I grafici di correlazione si fanno effettuando misure di estinzione e di emissione della riga a $21cm$.
 
+Si nota che le due grandezze smettono di essere correlate per alti valori $A_v$, cioe` di estinzione.Il motivo non pu\`o certamente essere l'estinzione delal riga a $21cm$ in quanto le polveri, a questa lunghezza d'onda, sono quasi totalmente trasparenti. L'idea principale alla base della rottura della correlazione consiste nel fatto che il gas si pu\`o ricombinare e formare una molecola di $H_2$. La molecola non ha pi\`u lo stato eccitato a $21cm$ quindi si interrompe la sua emissione.
 
+\begin{figure}
+		\centering
+				\begin{tikzpicture}
+						\draw[->] (0,0) -- (5,0);
+						\draw[->] (0,0) -- (0,5);
+						\node[] at (2.7,-0.3) {$A_v$};
+						\node[rotate=90] at (-0.3,2.5) {$N_H[cm^{-2}]$};
+						\draw[] plot [smooth] coordinates {(0,0) (1,1) (2,2.1) (3,2.9) (4,3.5) (5,3.7)};
 
+				\end{tikzpicture}
+		\caption{Correlazione tra estinzione ed emissione a $21cm$}
+		\label{CORR:EST:EL}
+\end{figure}
 
+Le molecole di idrogeno sono molto difficili da rilevare perch\`e non hanno una transizione accessibile come quella dell'idrogeno atomico a $21cm$, in pi\`u non possiedono un dipolo permanente. Molecole come il monossido di carbonio $CO$, che sono caratterizzare dall'avere un dipolo permanente, si possono stimare evenutali emissioni per cambio di livello rotazionale. Sapendo infatti che i livelli rotazionali sono per una molecola sono quantizzati e sono pari a
+\newl{
+		\boxed{
+				E_r = \frac{(I\omega)^2}{2I} = \frac{L^2}{2I} = \frac{\hbar^2 J (J+1)}{2I}
+		}
+}
+si ha che per un dipolo permanente valgono le regole di selezione di dipolo elettrico: $\Delta J = -1$. Una transizione di livello rotazionale, per esempio per la molecola di $CO$, produce fotoni di frequenza $\nu > 115GHz$.
+
+Questo non vale per le molecole di $H_2$, che possiede solo un debole quadrupolo, con regola di selezione di quadrupolo elettrico pari a $\Delta J = -2$. Questa transizione di quadrupolo, genera una debole emissione di lunghezza d'onda pari a circa $10\mu m$ che \`e troppo piccola per poter sfuggire all'estinzione delle polveri.
+
+Da come si \`e potuto capire, studiare la densit\`a dell'idrogeno molecolare \`e particolarmente complicato a causa del fatto che l'unica eccitazione possibile che pu\`o emettere elettroni \`e quella data dalle regole di selezione rotazionali di quadrupolo. Per arrivare ugualmente a dedurre la densit\`a dell'idrogeno molecolare si possono usare dei traccianti che hanno delle emissioni visibili, che non vengono attenuate dalle polveri. Questi sono rappresentati dalle emissioni, dovuti ai salti di livelli rotazionali, delle molecole di $CO$, $CH$, $OH$, $CS$, $C_3H_2$ e altre. Il tracciante pi\`u interessante rimane comunque quello del monossido di carbonio perch\`e \`e uno dei principali traccianti proprio per l'idrogeno molecolare.
+
+Come \`e possibile vedere in Fig.~\ref{CORR:EST:EL} la perdita di correlazione tra idrogeno atomico ed estinzione non suggerisce ancora che si viene a formare idrogeno molecoare perch\`e le densit\`a in gioco sono troppo piccole ed \`e difficile creare una molecola di idrogeno in queste condizioni proprio a causa della sua simmetria.
+
+Per far si che si venga a formare uno stato legato come quello della molecola di idrogeno \`e necessario che gli atomi vengano legati ad un livello eccitato e successivamente il sistema raggiunga il suo ground state emettendo energia. Nel caso della molecola di idrogeno, non aveno momento di dipolo non emette nulla.
+
+Per far si che si crei $H_2$ \`e necessario che prima si formi lo stato eccitato $H^-$. Per produrre questo stato si hanno le reazioni
+\newl{
+		H + e^- \to H^- + h\nu\nonumber\\
+		H^- + H \to H_2 + e^-
+}
+in cui la prima \`e energicamente molto sfavorita e molto lento come processo.
+La polvere pu\`o fungere da grande catalizzatore. i nuclei vengono catturati dai granie, dopo un random walk, si collocano in siti da dove non si spostano pi\`u. In questo modo \`e pi\`u facile far reagire tra loro i nuclei. Per produrre $H_2$, viene prodotta energia cinetica per $4.5eV$ sufficiente per espellere la molecola dal grano di polvere e cedergli momento angolare.
+
+\subsection{Formazione Stellare}
 
 
 
