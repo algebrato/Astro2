@@ -475,6 +475,117 @@ Si osserva in particolare che la luce proveniente dalle stelle ha polarizzazione
 
 Si osserva anche il contributo delle polveri alla polarizzazione della luce delle stelle, \`e necessario ma non sufficente, infatti si ha che se $A_v$ \`e piccolo allora non si ha quasi polarizzazione, se $A_v$ \`e grande allora la polarizzazione delle stelle pu\`o essere sia molto bassa che molto grande.
 
+Dato che i grani interagiscono con il campo elm, questo indica che non sono neutri. Il mezzo interstellare nella sua totalit\`a risulta invece essere neutro. Le modalit\`a con cui i grani catturano elettroni dall'ambiente circostante, sono principalmente due:
+\begin{itemize}
+		\item Elettroni liberi che si fissano alla superficie;
+		\item Effetto fotoelettrico da fotoni UV (poco importante nel caso di $A_v$ grande).
+\end{itemize}
+
+Nel caso di elettroni liberi che si fissano sulla superficie, \`e possibile stimarne il numero che un grano pu\`o ospitarne.
+\begin{figure}
+		\centering
+		\fbox{
+		\begin{tikzpicture}
+				\draw[] plot [smooth] coordinates {(3.2,0.5) (3.3,0.9) (3.1,1.2) (2.8, 2) (2.3,3.4) (3.5,4)}; 		
+				\draw[] (3.5,4) -- (4,2);
+				\draw[] (4,2) -- (4,1);
+				\draw[] (4,1) -- (3.2,0.5);
+				
+				\node[] at (3.2,0.5) {$\odot$};
+				\node[] at (3.1,1.2) {$\odot$};
+				\node[] at (2.8, 2) {$\odot$};
+				\node[] at (2.3,3.4) {$\odot$};
+				\node[] at (3.5,4) {$\odot$};
+				\node[] at (4,2) {$\odot$};
+				\node[] at (4,1) {$\odot$};
+
+				\draw[->] (0,1) -- (2,1.5);
+				\node[] at (0,1) {$\odot$};
+				\node[] at (0,1.5) {$E=\frac{3}{2}K_B T$};
+		\end{tikzpicture}
+		}
+		\caption{Meccanismo di deposito degli eletttroni sulla superficie del grano}
+		\label{GRANO:EL}
+\end{figure}
+Come \`e possibile vedere in Fig.~\ref{GRANO:EL} un elettrone "termico" raggiunge la superficie del grano con un'energia $E_k=3/2 K_B T$, se $E_k > U_{coulomb}$ si ha la cattura dell'elettrone sulla superficie. Per determinare il numero massimo di elettroni che si possono depositare su di un grano basta quindi uguagliare $U_C$ e $E_k$,
+\newl{ \frac{N e^2}{r_g} = \frac{3}{2}K_B T \implicaa N = \frac{3}{2} K_B r_g \frac{T}{e^2}\sim 1.  }
+In realt\`a questo valre di $N$ \`e sottostimato. Considerando le code ad alta velocit\`a degli elettroni il numero di elettroni che si possono depositare su di un grano diventa di $N\sim10$.
+
+\subsection{Temperatura dei grani}
+Supponendo che i grani siano scaldati dalle stelle vicine possiamo considerare la stima della temperatura come se tutta l'energia arrivi da una stella di una certa $L$ e raggio $R$ posta ad una certa distanza $d$ dal grano. Ricordando che la luminosit\`a di una stella vista come corpo nero sferico \`e:
+\newl{L=4 \pi R^2 \sigma T^4}
+e la frazione di potenza che colpisce il grano \`e data da
+\newl{
+		f=\frac{\pi r_g^2}{4\pi d^2} = \frac{1}{4} \left(\frac{r_g}{d}\right)^2
+}
+Se il grano ha albedo $a$, assorbe una potenza pari a 
+\newl{
+		P_{abs}=f L (1-a) = (1-a) r_g^2 \sigma T^4 \left(\frac{\pi R^2}{d^2}\right)
+}
+dove $(\pi R^2)/d^2 = \Omega_{*}$ \`e l'angolo solido della stella visto dal grano.
+La potenza rilasciata dal grano, se fosse un corpo nero perfetto sarebbe
+\newl{
+		P_{rad} = 4\pi r_g^2 \sigma T_g^4
+}
+ma avendo albedo $a$, la potenza irradiata sar\`a sempre scalata da
+\newl{
+		P_{rad}=(1-a)4\pi r_g^2\sigma T_g^4.
+}
+Se la polvere ha raggiungo la temperatura $T_g$ di equilibrio, si ha che $P_{rad} = P_{abs}$ e quindi
+\newl{
+		(1-a)4\pi r_g^2\sigma T_g^4 = (1-a) r_g^2 \sigma T^4 \left(\frac{\pi R^2}{d^2}\right)\nonumber\\
+		T_g=T\sqrt{\frac{R}{2d}}
+}
+quindi, la temperatura dei grani, non dipende ne dalla loro forma ne dal loro albedo.
+
+\subsection{Grani in Rotazione}
+Molte evidenze suggeriscono che i grani siano in rotazione. Se il grano \`e costituito da materiale paramagnetico e ruota con momento di dipolo disallineato rispetto alla direzione del campo magnetico galattico $B_{gal}$, si ha una forza di torsione di richiamo che ovviamente tende ad allineare $\mu_{B}$ con $B_{gal}$. Se l'asse di rotazione del grano \`e gi\`a parallelo a $B_{gal}$ allora non si ha alcuna forza di richiamo. In generale i grani sono in rotazione e con tutti il loro $\mu_{B}$ allineato a $B_{gal}$, fenomeno conosciuto col nome di \emph{Rilassamento Paramagnetico}.
+
+\textbf{Radiazione anomala a 32GHz ... Non si capisce bene il contributo alla radiazione totale, ma centrano le PAH che danno contributo appunto a 32GHz.}
+
+Per avere un modello realistico che descriva il comportamento del mezzo interstellare bisogna considerare altri effetti per esempio:
+\begin{itemize}
+		\item Collisioni con ioni;
+		\item Accoppiamento tra $\mu$ e il campo elm;
+		\item Assorbimento ed emissione di fotoni;
+		\item Formazioni di molecoled di $H_2$;
+		\item Vari tipi di emissione di fotoni (rinculo, modi roto-vibrazionali, ...);
+		\item ecc..
+\end{itemize}
+Modelli pi\`u dettagliati prevedono che
+\newl{
+		\boxed{
+			\langle\omega^2\rangle \leq 3 K_B \frac{T}{I},
+	}
+}
+che da come risultato sempre un'emissione sulle decine di GHz.
+
+Oltre a questo, c'\`e il modello di Hensley che cerca una relazione tra 
+\newl{
+		\frac{F_{\nu}^{sd}}{M_{dust}}\propto q_{pah}
+}
+anche se le misure indicano invece che le grandezze $F_{\nu}^{sd}$ e $q_{pah}$ sono anticorrelate.
+
+\section{Gas Interstellare (ISG)}
+Le osservazioni che conducono all'idea della presenza di un gas interstellare sono principalmente tre: La prima riguarda il fatto che i sistemi binari non mostrano effetto doppler. La seconda riguarda le linee spettrali delel stelle lontane che sono molto piu` marcate di quelle vicine e sono molto pi\`u strette (compatibili con una $T\sim100K$). Questo ha suggerito la presenza di gas interstellare.
+
+Non si osserva presenza di idrogeno interstellare nel \emph{visibile}. A causa della bassa temperatura non ci sono righe di Balmer, quindi il fatto che non sia visibile non dice nulla sula fatto che ci sia o meno. Gli elementi che sono stati osservati e quindi sono sicuramente presenti sono Calcio e Sodio ma sono state osservate anche molecole $CH$, $CN$, $CH^+$. Queste ultime implicano una bassa densit\`a del gas e una bassa temperatura perch\`e molecole cariche come $CH^+$, in condizioni di laboratorio si neutralizzano subito, mentre $CH$ e $CN$ sono fortemente reattive. 
+
+\`E comunque lecito aspettarsi che la componente di idrogeno atomico sia predominante nel gas interstellare, anche se questo non \`e osservabile nel visibile. Le righe Lymann sono escluse dall'osservazione perch\`e vengono tutte assorbite dalle polveri del mezzo interstellare, le osservazioni che ci permettono di osservare l'idrogeno atomico sono quelle a $21cm$.
+
+L'osservazione della riga a $21cm$ \`e di fondamentale importanza nel capire presenza e concentrazioni di idrogeno atomico nel gas interstellare. Lo stato eccitato che ci interessa riguarda lo spin flip dell'elettrone passando da spin parallelo a $p$ ad antiparallelo a $p$. Il salto di energia \`e molto piccolo nell'ordine dei
+\newl{
+		\Delta E = 5.9 \times 10^{-6} eV.
+}
+La temperatura associata a questa energia \`e nell'ordine dei $0.07K$, quindi la radiazione di fondo cosmico a $2.7K$ \`e sufficiente a far si che la tansizione venga e sia possibile eccitare l'atomo.
+
+La riga a $21cm$ \`e sufficientemente lunga da attraversare le polveri e raggiungere la terra dove \`e possibile rilevarla. Essendo cos\`i insensibile alle polveri permette di studiare la struttura e la rotazione deilla galassia. Andando a osservare lo split Zeeman sulla riga a $21cm$ \`e possibile anche avere informazioni sul campo magnetico galattico.
+
+\subsection{Emissione di Idrogeno}
+
+
+
+
 
 
 
